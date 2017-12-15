@@ -7,11 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloComponent implements OnInit {
 
-  teste = 'primeiro componente';
+  funcionario = 'Elton Teste';
+  msg = 'gerou o número: ';
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getFuncionario() {
+    this.funcionario;
+  }
+
+  adcionar() {
+    const numero = Math.round(Math.random() * 100);
+    this.funcionario = 'Elton Alterou' + numero;
+     console.log(this.msg + numero);
+  }
+
+  exibirTextoDigitado(event: any) {
+    this.funcionario = event.target.value;
   }
 
 }
