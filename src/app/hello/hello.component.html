@@ -1,12 +1,12 @@
 <div class="container">
   <div class="alert alert-success" role="alert">
     Adicionado:
-    <strong>{{funcionario}}</strong>
+    <strong>{{nome}}</strong>
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput">Nome:</label>
-    <input type="text" class="form-control" (input)="exibirTextoDigitado($event)" value="{{funcionario}}">
-    <button type="button" class="btn btn-primary" (click)="adcionar()">Adicionar</button>
+    <input type="text" class="form-control" #nomeInput>
+    <button type="button" class="btn btn-primary" (click)="adcionar(nomeInput.value)">Adicionar</button>
 
   </div>
 
