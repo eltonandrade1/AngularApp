@@ -10,12 +10,24 @@ export class HelloComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  funcionario = 'Elton Teste';
-  adiconado = false;
+  ultimoId = 0;
+  nome: String;
+  adicionado = false;
+  funcionarios = [];
 
-  adcionar() {
-    this.adiconado = true;
-    console.log("Funcionário " + this.funcionario + " adiconado com sucesso.");
+  adicionar() {
+    this.adicionado = true;
+    console.log("Funcionário " + this.nome + " adicionado com sucesso.");
+
+    //Adicionado como objeto javaScript
+    this.funcionarios.push({
+      id: ++this.ultimoId,
+      nome: this.nome
+    });
+  }
+
+  ifEmptyString(string: String) {
+    return string == null || string.length == 0;
   }
 
 }
