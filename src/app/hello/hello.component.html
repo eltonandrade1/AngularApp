@@ -1,12 +1,12 @@
 <div class="container">
   <div class="alert alert-success" role="alert">
     Adicionado:
-    <strong>{{nome}}</strong>
+    <strong>{{funcionario}}</strong>
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput">Nome:</label>
-    <input type="text" class="form-control" #nomeInput>
-    <button type="button" class="btn btn-primary" (click)="adcionar(nomeInput.value)">Adicionar</button>
+    <input type="text" class="form-control" [(ngModel)]="funcionario">
+    <button type="button" class="btn btn-primary" (click)="adcionar()" [disabled]="funcionario.length == 0">Adicionar</button>
 
   </div>
 

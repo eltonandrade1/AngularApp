@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloComponent implements OnInit {
 
-  funcionario = "Elton Teste";
+  funcionario = 'Elton Teste';
   msg = 'gerou o número: ';
-  nome: String;
 
   constructor() { }
 
@@ -20,9 +19,13 @@ export class HelloComponent implements OnInit {
     this.funcionario;
   }
 
-  adcionar(nome: String) {
-    this.nome  = nome;
+  adcionar() {
+    const numero = Math.round(Math.random() * 100);
+    this.funcionario = 'Elton Alterou' + numero;
+     console.log(this.msg + numero);
   }
 
-
+  exibirTextoDigitado(event: any) {
+    this.funcionario = event.target.value;
+  }
 }
