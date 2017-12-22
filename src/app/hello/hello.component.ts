@@ -6,26 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hello.component.css']
 })
 export class HelloComponent implements OnInit {
+  
+  ngOnInit(): void {
+  }
 
   funcionario = 'Elton Teste';
-  msg = 'gerou o número: ';
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  getFuncionario() {
-    this.funcionario;
-  }
+  adiconado = false;
 
   adcionar() {
-    const numero = Math.round(Math.random() * 100);
-    this.funcionario = 'Elton Alterou' + numero;
-     console.log(this.msg + numero);
+    this.adiconado = true;
+    console.log("Funcionário " + this.funcionario + " adiconado com sucesso.");
   }
 
-  exibirTextoDigitado(event: any) {
-    this.funcionario = event.target.value;
-  }
 }
